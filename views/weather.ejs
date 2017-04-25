@@ -1,0 +1,68 @@
+ <!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <% include templates/commonHead.ejs %>
+
+    </head>
+    <body>
+
+        <% include templates/header.ejs %>
+
+        <style>
+
+        </style>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12 headerContainer">
+                    
+                    <h1> <%= header %> </h1>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 forecastDiv">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p class="day">TODAY </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Print Data to Page -->
+                        <div class="col-sm-4"> 
+                            <span class="tempText">High</span><span class="temp"><%= Math.round(obj.consolidated_weather[0].max_temp)%>&#8451;</span> 
+                        </div>
+                        <div class="col-sm-4"><span class="tempText">Low</span><span class="temp"><%= Math.round(obj.consolidated_weather[0].min_temp)%>&#8451;</span></div>
+                        <div class="col-sm-4"><img src="https://www.metaweather.com/static/img/weather/ico/<%=obj.consolidated_weather[0].weather_state_abbr %>.ico"></div>
+                    </div>                  
+                </div>
+                <div class="col-md-12 forecastDiv">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p class="day">TOMORROW </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <span class="tempText">High</span><span class="temp"><%= Math.round(obj.consolidated_weather[1].max_temp)%>&#8451;</span> 
+                        </div>
+                        <div class="col-sm-4"><span class="tempText">Low</span><span class="temp"><%= Math.round(obj.consolidated_weather[1].min_temp)%>&#8451;</span></div>
+                        <div class="col-sm-4"><img src="https://www.metaweather.com/static/img/weather/ico/<%=obj.consolidated_weather[0].weather_state_abbr %>.ico"></div>
+                    </div>  
+                </div>
+            </div>
+
+		</div>
+
+    </body>
+
+    <footer>
+        <script>
+
+        </script>
+
+
+    </footer>
+</html>
